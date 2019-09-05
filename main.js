@@ -14,8 +14,29 @@
  *     - removeMaxNumberFromArray関数を実行した後の配列numbersの内容は [10, 500, 234, 965, 221] のままである
  */
 
+const removeMaxNumberFromArray = (_numbers) => {
+	let returnedNumbers = [];
+	let tempNum = _numbers[0];
+	for(let i=0;i<_numbers.length;i++){
+		
+		if (tempNum < _numbers[i]){
+			tempNum = i
+		}
+	  
+	}
+	console.log(_numbers);
+// 	_numbers.pop(tempNum);
+	returnedNumbers = _numbers.splice(tempNum,0);
+	console.log(returnedNumbers);
 
+	return returnedNumbers;
+}
 
+let numbers = [10, 500, 234, 965, 221];
+
+const result = removeMaxNumberFromArray(numbers);
+
+console.log(result);
 /**
  * 課題2: 数値が格納されている配列を引数で受け取り、小さい順に並べ替える
  *   - 関数名は「sortNumbers」とする
